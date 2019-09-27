@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deploy" : "gh-pages -d ./",
+  //  gh-pages -d 경로 로 설정한다. ./ 는 현재 디렉토리와 같은 곳이라서 저렇게쓴다.
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,7 @@
     "url": "https://github.com/pirogramming-semester/3rd-assignment/issues"
   },
   "homepage": "https://jiyun1006.github.io/3rd-assignment",
+  // github_username.github.io/[repo_name]
   "dependencies": {},
   "devDependencies": {
     "gh-pages": "^2.1.1"

@@ -7,10 +7,13 @@ window.onload = async () => {
 		const {
 			data: {
 				data: { movies : data }
+				// json명 : 변수명
 			}
 		} = await axios.get(
 			"https://yts.lt/api/v2/list_movies.json?quality=3D"
 		);
+
+		// axios.get 이곳에다가 사용하고자하는 api 주소를 쓴다.
 
 		console.log(data);
 		const title = document.createElement("p");
