@@ -6,7 +6,7 @@ window.onload = async () => {
 	const main = async () => {
 		const {
 			data: {
-				data: { movies : data }
+				data: { movies : movies }
 				// json명 : 변수명
 			}
 		} = await axios.get(
@@ -14,18 +14,29 @@ window.onload = async () => {
 		);
 
 		// axios.get 이곳에다가 사용하고자하는 api 주소를 쓴다.
+		movies.forEach(function(data){
+			const img = document.createElement("img");
+			const title = document.createElement("h1");
+			const genres = document.createElement("span");
+			
+			const desc = document.createElement("p");
+			img.src = data.medium_cover_image;
+			title.innerText = data.title_long;
 
-		console.log(data);
-		const title = document.createElement("p");
-		const img = document.createElement("img");
-		const desc = document.createElement("p");
-		title.innerText = data[0].title_long;
-		img.src = data[0].medium_cover_image;
-		desc.innerText = data[0].description_full;
-		const card = document.createElement("p");
-		card.append(img, title, desc);
+			genres.innerText = data.genres.join(" ");
+
+			// data.genres.forEach(function(genre){
+			// 	genreSpan = document.createElement('span');
+			// 	genreSpan.innerText = genre + " ";
+			// 	genres.append(genreSpan);
+			// })
+			desc.innerText = data.description_full;
+			const card = document.createElement("p");
+			card.append(img, title,genres, desc);
+			
+			app.appendChild(card);
+		})
 		app.removeChild(loading);
-		app.appendChild(card);
 	};
 
 	await main();
