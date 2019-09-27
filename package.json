@@ -4,6 +4,7 @@
   "description": "pirogramming assginment3",
   "main": "index.js",
   "scripts": {
+    "deploy" : "gh-pages -d ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,8 +16,10 @@
   "bugs": {
     "url": "https://github.com/pirogramming-semester/3rd-assignment/issues"
   },
-  "homepage": "https://github.com/pirogramming-semester/3rd-assignment#readme",
-  "dependencies": {
+  "homepage": "https://jiyun1006.github.io/3rd-assignment",
+  "dependencies": {},
+  "devDependencies": {
     "gh-pages": "^2.1.1"
   }
+  
 }
